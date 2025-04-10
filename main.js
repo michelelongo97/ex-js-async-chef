@@ -25,7 +25,8 @@ async function getChefBirthday(id) {
     `https://dummyjson.com/users/${ricetta.userId}`
   );
   const chef = await chefResponse.json();
-  return chef.birthDate;
+  const newDate = dayjs(chef.birthDate).format("DD/MM/YYYY");
+  return newDate;
 }
 
 (async () => {
